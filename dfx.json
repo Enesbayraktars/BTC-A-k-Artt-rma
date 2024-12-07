@@ -1,0 +1,36 @@
+{
+  "canisters": {
+    "btc_backend": {
+      "main": "src/btc_backend/main.mo",
+      "type": "motoko"
+    },
+    "btc_frontend": {
+      "dependencies": [
+        "btc_backend"
+      ],
+      "source": [
+        "src/btc_frontend/assets"
+      ],
+      "type": "assets"
+    },
+    "internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "frontend": {},
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "type": "custom",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
